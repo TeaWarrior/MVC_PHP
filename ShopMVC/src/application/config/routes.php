@@ -13,7 +13,7 @@ return [
     ],
     'index.php' =>[
         'controller' => 'main',
-        'action' => 'index',
+        'action' => 'hello',
 
     ],
 
