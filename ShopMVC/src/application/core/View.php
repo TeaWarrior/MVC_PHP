@@ -19,12 +19,17 @@ class View{
 
     public function render($title, $vars=[]){
 
+        extract($vars);
+
         if(file_exists('application/views/'.$this->path.'.php'))
         {
             ob_start();
             require 'application/views/'.$this->path.'.php';
             $content = ob_get_clean();
+
             require 'application/views/layout/'.$this->layout.'.php';
+
+          //  debug(($vars));
 
         }else{
             echo 'View not found '.$this->path;
